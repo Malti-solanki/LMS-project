@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Smart Study Planner</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-dark bg-dark">
+
+<div class="container-fluid">
+
+<a class="navbar-brand">
+Smart Study Planner
+</a>
+
+<a href="/dashboard"
+class="btn btn-light">
+Dashboard
+</a>
+
+</div>
+
+</nav>
+
+<!-- MAIN CONTAINER -->
+
+<div class="container mt-5">
+
+<h1 class="mb-4">
+Add Study Task
+</h1>
+
+<!-- TASK FORM -->
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label class="form-label">
+Task Name
+</label>
+
+<input
+type="text"
+name="task_name"
+class="form-control"
+placeholder="Enter Study Task"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+Task Date
+</label>
+
+<input
+type="date"
+name="task_date"
+class="form-control"
+required>
+
+</div>
+
+<button
+type="submit"
+class="btn btn-primary">
+
+Add Task
+
+</button>
+
+</form>
+
+<hr class="my-5">
+
+<!-- TASK TABLE -->
+
+<h2 class="mb-4">
+Study Tasks
+</h2>
+
+<table class="table table-bordered table-striped">
+
+<tr class="table-dark">
+
+<th>ID</th>
+<th>Task</th>
+<th>Date</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+{% for task in tasks %}
+
+<tr>
+
+<td>{{task[0]}}</td>
+
+<td>{{task[1]}}</td>
+
+<td>{{task[2]}}</td>
+
+<td>
+
+{% if task[3] == 'Completed' %}
+
+<span class="badge bg-success">
+Completed
+</span>
+
+{% else %}
+
+<span class="badge bg-warning text-dark">
+Pending
+</span>
+
+{% endif %}
+
+</td>
+
+<td>
+
+<a href="/complete_task/{{task[0]}}"
+class="btn btn-success btn-sm">
+
+Complete
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>

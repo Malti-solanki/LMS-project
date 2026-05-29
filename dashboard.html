@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>LMS Dashboard</title>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<div class="container-fluid">
+
+<a class="navbar-brand">
+LMS Dashboard
+</a>
+
+<div>
+
+<a href="/logout"
+class="btn btn-danger">
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- MAIN CONTAINER -->
+
+<div class="container mt-5">
+
+<h1 class="mb-5">
+Welcome {{name}}
+</h1>
+
+<div class="row">
+
+<!-- ADD COURSE -->
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h3>Add Course</h3>
+
+<p>
+Add new courses into LMS
+</p>
+
+<a href="/add_course"
+class="btn btn-primary">
+
+Add Course
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- VIEW COURSES -->
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h3>View Courses</h3>
+
+<p>
+See all available courses
+</p>
+
+<a href="/view_courses"
+class="btn btn-success">
+
+View Courses
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STUDY PLANNER -->
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h3>Study Planner</h3>
+
+<p>
+Manage your daily study tasks
+</p>
+
+<a href="/planner"
+class="btn btn-warning">
+
+Open Planner
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STUDENT ENROLLMENT -->
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h3>Student Enrollment</h3>
+
+<p>
+Enroll students into courses
+</p>
+
+<a href="/enrollment"
+class="btn btn-info">
+
+Open Enrollment
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- QUIZ MODULE -->
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h3>Quiz Module</h3>
+
+<p>
+Start online MCQ quiz
+</p>
+
+<a href="/quiz"
+class="btn btn-secondary">
+
+Open Quiz
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ATTENDANCE SYSTEM -->
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h3>Attendance System</h3>
+
+<p>
+Manage student attendance
+</p>
+
+<a href="/attendance"
+class="btn btn-dark">
+
+Open Attendance
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- NOTES UPLOAD -->
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h3>Notes Upload</h3>
+
+<p>
+Upload study notes and files
+</p>
+
+<a href="/notes"
+class="btn btn-primary">
+
+Open Notes
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- LOGOUT CARD -->
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow h-100">
+
+<div class="card-body">
+
+<h3>Logout</h3>
+
+<p>
+Logout from LMS Project
+</p>
+
+<a href="/logout"
+class="btn btn-danger">
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
