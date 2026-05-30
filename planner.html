@@ -1,46 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Smart Study Planner</title>
 
-<link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#43cea2,#185a9d);
+    min-height:100vh;
+}
+
+.header{
+    background:#198754;
+    color:white;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.container-box{
+    background:white;
+    margin-top:40px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.btn{
+    border-radius:10px;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<div class="header">
 
-<nav class="navbar navbar-dark bg-dark">
+<h1>📖 Smart Study Planner</h1>
 
-<div class="container-fluid">
-
-<a class="navbar-brand">
-Smart Study Planner
-</a>
-
-<a href="/dashboard"
-class="btn btn-light">
-Dashboard
-</a>
+<p>Manage Your Daily Study Schedule</p>
 
 </div>
 
-</nav>
+<div class="container">
 
-<!-- MAIN CONTAINER -->
+<div class="container-box">
 
-<div class="container mt-5">
+<div class="row">
 
-<h1 class="mb-4">
-Add Study Task
-</h1>
+<div class="col-md-5">
 
-<!-- TASK FORM -->
+<h3>Add New Task</h3>
 
 <form method="POST">
 
@@ -75,25 +95,34 @@ required>
 
 <button
 type="submit"
-class="btn btn-primary">
+class="btn btn-success w-100">
 
-Add Task
+➕ Add Task
 
 </button>
 
 </form>
 
-<hr class="my-5">
+<br>
 
-<!-- TASK TABLE -->
+<a href="/dashboard"
+class="btn btn-secondary w-100">
 
-<h2 class="mb-4">
-Study Tasks
-</h2>
+🏠 Back to Dashboard
 
-<table class="table table-bordered table-striped">
+</a>
 
-<tr class="table-dark">
+</div>
+
+<div class="col-md-7">
+
+<h3>Study Tasks</h3>
+
+<table class="table table-bordered table-hover text-center">
+
+<thead class="table-dark">
+
+<tr>
 
 <th>ID</th>
 <th>Task</th>
@@ -102,6 +131,10 @@ Study Tasks
 <th>Action</th>
 
 </tr>
+
+</thead>
+
+<tbody>
 
 {% for task in tasks %}
 
@@ -133,12 +166,22 @@ Pending
 
 <td>
 
-<a href="/complete_task/{{task[0]}}"
-class="btn btn-success btn-sm">
+{% if task[3] != 'Completed' %}
 
-Complete
+<a href="/complete_task/{{task[0]}}"
+class="btn btn-primary btn-sm">
+
+✔ Complete
 
 </a>
+
+{% else %}
+
+<span class="text-success">
+Done
+</span>
+
+{% endif %}
 
 </td>
 
@@ -146,7 +189,15 @@ Complete
 
 {% endfor %}
 
+</tbody>
+
 </table>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
