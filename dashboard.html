@@ -1,29 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>LMS Dashboard</title>
 
-<link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 rel="stylesheet">
+
+<style>
+
+body{
+    background: #f4f6f9;
+}
+
+.navbar{
+    box-shadow:0px 2px 10px rgba(0,0,0,0.2);
+}
+
+.welcome-box{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    margin-top:25px;
+    margin-bottom:30px;
+}
+
+.card{
+    border:none;
+    border-radius:20px;
+    transition:0.3s;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card-body{
+    text-align:center;
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
 <div class="container-fluid">
 
 <a class="navbar-brand">
-LMS Dashboard
+🎓 LMS Dashboard
 </a>
-
-<div>
 
 <a href="/logout"
 class="btn btn-danger">
@@ -34,38 +73,42 @@ Logout
 
 </div>
 
-</div>
-
 </nav>
 
-<!-- MAIN CONTAINER -->
+<div class="container">
 
-<div class="container mt-5">
+<div class="welcome-box">
 
-<h1 class="mb-5">
-Welcome {{name}}
-</h1>
+<h2>
+Welcome, {{name}} 👋
+</h2>
 
-<div class="row">
+<p>
+Learning Platform with Smart Study Planner
+</p>
 
-<!-- ADD COURSE -->
+</div>
 
-<div class="col-md-4 mb-4">
+<div class="row g-4">
 
-<div class="card shadow h-100">
+<!-- Add Course -->
+
+<div class="col-md-4">
+
+<div class="card">
 
 <div class="card-body">
 
-<h3>Add Course</h3>
+<div class="icon">📚</div>
 
-<p>
-Add new courses into LMS
-</p>
+<h4>Add Course</h4>
+
+<p>Create new courses</p>
 
 <a href="/add_course"
 class="btn btn-primary">
 
-Add Course
+Open
 
 </a>
 
@@ -75,24 +118,24 @@ Add Course
 
 </div>
 
-<!-- VIEW COURSES -->
+<!-- View Courses -->
 
-<div class="col-md-4 mb-4">
+<div class="col-md-4">
 
-<div class="card shadow h-100">
+<div class="card">
 
 <div class="card-body">
 
-<h3>View Courses</h3>
+<div class="icon">📖</div>
 
-<p>
-See all available courses
-</p>
+<h4>View Courses</h4>
+
+<p>Manage all courses</p>
 
 <a href="/view_courses"
 class="btn btn-success">
 
-View Courses
+Open
 
 </a>
 
@@ -102,24 +145,24 @@ View Courses
 
 </div>
 
-<!-- STUDY PLANNER -->
+<!-- Study Planner -->
 
-<div class="col-md-4 mb-4">
+<div class="col-md-4">
 
-<div class="card shadow h-100">
+<div class="card">
 
 <div class="card-body">
 
-<h3>Study Planner</h3>
+<div class="icon">📝</div>
 
-<p>
-Manage your daily study tasks
-</p>
+<h4>Study Planner</h4>
+
+<p>Manage study tasks</p>
 
 <a href="/planner"
 class="btn btn-warning">
 
-Open Planner
+Open
 
 </a>
 
@@ -129,24 +172,24 @@ Open Planner
 
 </div>
 
-<!-- STUDENT ENROLLMENT -->
+<!-- Enrollment -->
 
-<div class="col-md-4 mb-4">
+<div class="col-md-4">
 
-<div class="card shadow h-100">
+<div class="card">
 
 <div class="card-body">
 
-<h3>Student Enrollment</h3>
+<div class="icon">🎓</div>
 
-<p>
-Enroll students into courses
-</p>
+<h4>Enrollment</h4>
+
+<p>Enroll students</p>
 
 <a href="/enrollment"
-class="btn btn-info">
+class="btn btn-danger">
 
-Open Enrollment
+Open
 
 </a>
 
@@ -156,24 +199,24 @@ Open Enrollment
 
 </div>
 
-<!-- QUIZ MODULE -->
+<!-- Quiz -->
 
-<div class="col-md-4 mb-4">
+<div class="col-md-4">
 
-<div class="card shadow h-100">
+<div class="card">
 
 <div class="card-body">
 
-<h3>Quiz Module</h3>
+<div class="icon">🧠</div>
 
-<p>
-Start online MCQ quiz
-</p>
+<h4>Quiz Module</h4>
+
+<p>Online MCQ Tests</p>
 
 <a href="/quiz"
-class="btn btn-secondary">
+class="btn btn-info">
 
-Open Quiz
+Open
 
 </a>
 
@@ -183,24 +226,24 @@ Open Quiz
 
 </div>
 
-<!-- ATTENDANCE SYSTEM -->
+<!-- Attendance -->
 
-<div class="col-md-4 mb-4">
+<div class="col-md-4">
 
-<div class="card shadow h-100">
+<div class="card">
 
 <div class="card-body">
 
-<h3>Attendance System</h3>
+<div class="icon">📋</div>
 
-<p>
-Manage student attendance
-</p>
+<h4>Attendance</h4>
+
+<p>Track attendance</p>
 
 <a href="/attendance"
 class="btn btn-dark">
 
-Open Attendance
+Open
 
 </a>
 
@@ -210,24 +253,24 @@ Open Attendance
 
 </div>
 
-<!-- NOTES UPLOAD -->
+<!-- Notes -->
 
-<div class="col-md-4 mb-4">
+<div class="col-md-6">
 
-<div class="card shadow h-100">
+<div class="card">
 
 <div class="card-body">
 
-<h3>Notes Upload</h3>
+<div class="icon">📂</div>
 
-<p>
-Upload study notes and files
-</p>
+<h4>Notes Upload</h4>
+
+<p>Upload study materials</p>
 
 <a href="/notes"
-class="btn btn-primary">
+class="btn btn-secondary">
 
-Open Notes
+Open
 
 </a>
 
@@ -237,19 +280,19 @@ Open Notes
 
 </div>
 
-<!-- LOGOUT CARD -->
+<!-- Logout -->
 
-<div class="col-md-4 mb-4">
+<div class="col-md-6">
 
-<div class="card shadow h-100">
+<div class="card">
 
 <div class="card-body">
 
-<h3>Logout</h3>
+<div class="icon">🚪</div>
 
-<p>
-Logout from LMS Project
-</p>
+<h4>Logout</h4>
+
+<p>Exit LMS System</p>
 
 <a href="/logout"
 class="btn btn-danger">
